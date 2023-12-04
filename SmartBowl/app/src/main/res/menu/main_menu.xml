@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/CTRLFragment"
+        android:title="어항관리"
+        android:icon="@drawable/baseline_tsunami_24"
+        />
+
+    <item
+        android:id="@+id/webViewFragment"
+        android:title="스트리밍"
+        android:icon="@drawable/streaming"
+        />
+
+</menu>

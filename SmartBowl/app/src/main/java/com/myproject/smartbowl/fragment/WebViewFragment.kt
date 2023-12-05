@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.webkit.WebViewClient
 import com.myproject.smartbowl.databinding.FragmentWebViewBinding
 import com.myproject.smartbowl.viewModel.WebViewViewModel
 
@@ -21,10 +22,17 @@ class WebViewFragment : Fragment() {
         return binding.root
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(WebViewViewModel::class.java)
-        // TODO: Use the ViewModel
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val webView = binding.webView
+
+        webView.settings.javaScriptEnabled = true
+        webView.webViewClient = WebViewClient()
+
+        // IP 주소에 접속
+        val ipAddress = "http://10.40.45.28:8081"
+        //val ipAddress = "http://naver.com"
+        webView.loadUrl(ipAddress)
     }
 
     override fun onDestroy() {

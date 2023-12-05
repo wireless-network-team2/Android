@@ -29,12 +29,7 @@ class MainActivity : AppCompatActivity(), NavigationBarView.OnItemSelectedListen
                 binding.navigationView.menu.getItem(position).isChecked = true
             }
         })
-
         binding.navigationView.setOnItemSelectedListener(this)
-
-
-
-
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
